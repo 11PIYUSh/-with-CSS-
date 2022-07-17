@@ -1,0 +1,140 @@
+/*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}*/
+
+h1{
+  font-weight: bolder;
+  background: none;
+  color: hotpink;
+  text-align: center;
+  font-family: sans-serif;
+  margin-bottom: 0px;
+  margin-top: 0;
+  border-radius: 0%;
+  : 2px solid black;
+  animation: hbeat 1s linear infinite;
+}
+
+.parent{
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: antiquewhite;
+  border: 2px solid #000;
+  border-radius: 3%;
+}
+
+.child{
+  width: 50%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outer-circle{
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 105, 180, 0.8);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #000;
+  box-shadow: -5px 10px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  
+}
+
+.outer-circle::before{
+  content: "";
+  position: absolute;
+  width: 145px;
+  height: 145px;
+  border: 5px solid pink;
+  border-radius: 50%;
+  border-right: 0;
+  border-top: 0;
+  
+}
+
+
+.inner-circle{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: antiquewhite;
+  border: 2px solid #000;
+  position: relative;
+}
+
+.inner-circle::before{
+  content: "";
+  position: absolute;
+  width: 25px;
+  height:25px;
+  border: 5px solid #fff;
+  left: -20px;
+  top: 20px;
+  border-bottom-left-radius: 50px;
+  border-top: 0;
+  border-right: 0;
+  transform: rotate(25deg);
+  opacity: 0.8;
+ /* animation: hbeat 1s linear infinite;*/
+}
+
+.eyes{
+  width: 7px;
+  height: 7px;
+  background: #000;
+  border-radius: 50%;
+  position: relative;
+  left: 6px;
+  top: -35px;
+  box-shadow: 30px 0 0 0 #000;
+ /* animation: hbeat 1s linear infinite;*/
+}
+
+.eyes::before{
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  border: 3px solid #000;
+  top: 15px;
+  left: 5px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-top: 0;
+  
+}
+
+.centre{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes hbeat {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1);
+  }
+  40% {
+    transform:  scale(1.4);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform:  scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
